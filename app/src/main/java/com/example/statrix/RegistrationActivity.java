@@ -64,7 +64,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id, IDrawerItem drawerItem) {
                         switch (view.getId()){
-                            case 
+                            case
                         }
                     }
                 })
