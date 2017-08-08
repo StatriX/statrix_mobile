@@ -53,14 +53,6 @@ public class RegistrationActivity extends AppCompatActivity {
                         new DividerDrawerItem(),
                         new SecondaryDrawerItem().withName(R.string.drawer_item_help).withIdentifier(5)
                 )
-                /*.addDrawerItems(
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_general_statistics).withIcon(FontAwesome.Icon.faw_home).withIdentifier(1),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_everyday_statistics).withIcon(FontAwesome.Icon.faw_gamepad),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_administration).withIcon(FontAwesome.Icon.faw_eye).withIdentifier(2),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_products).withIcon(FontAwesome.Icon.faw_gamepad),
-                        new DividerDrawerItem(),
-                        new SecondaryDrawerItem().withName(R.string.drawer_item_help).withIcon(FontAwesome.Icon.faw_github).withIdentifier(1)
-                )*/
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id, IDrawerItem drawerItem) {
@@ -69,7 +61,7 @@ public class RegistrationActivity extends AppCompatActivity {
                                 Intent intent = new Intent(view.getContext(), GeneralStatistics.class);
                                 startActivity(intent);
                                 break;
-                            /*case 2:
+                            case 2:
                                 Intent intent1 = new Intent(view.getContext(), EveryDayStatistics.class);
                                 startActivity(intent1);
                                 break;
@@ -84,10 +76,10 @@ public class RegistrationActivity extends AppCompatActivity {
                             case 5:
                                 Intent intent4 = new Intent(view.getContext(), FeedBack.class);
                                 startActivity(intent4);
-                                break;*/
+                                break;
                         }
                     }
-                });
+                }).build();
 
     }
 }
