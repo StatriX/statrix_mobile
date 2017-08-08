@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">statrix</string>
+
+
+
+    <string name="drawer_item_general_statistics">Общая статистика</string>
+    <string name="drawer_item_everyday_statistics">Ежедневная статистика</string>
+    <string name="drawer_item_administration">Администрирование</string>
+    <string name="drawer_item_products">Продукты</string>
+    <string name="drawer_item_help">Связаться с разаработчиками</string>
+    <string name="toolbar_registration">Регистрация</string>
+
+</resources>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="50dp"
+    android:paddingRight="50dp">
+
+    <TextView
+        android:id="@+id/user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Пользователь"
+        android:textSize="40sp" />
+
+    <EditText
+        android:id="@+id/Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/edit_text_style"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Введите имя"
+        android:inputType="textPersonName"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edit_text_style"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Введите e-mail"
+        android:inputType="textEmailAddress"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/create_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edit_text_style"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Введите пароль"
+        android:inputType="textPassword"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/repeat_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edit_text_style"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Введите пароль повторно"
+        android:inputType="textPassword"
+        android:singleLine="false"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/button_round_corners"
+        android:text="Добавить"
+        android:textColor="@android:color/white"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+</LinearLayout>
