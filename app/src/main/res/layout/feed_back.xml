@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+
+    <EditText
+        android:id="@+id/feedback"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Введите сообщение"
+        android:inputType="textPersonName"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/send_feedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/button_round_corners"
+        android:text="Отправить"
+        android:textColor="@android:color/white"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+</LinearLayout>
