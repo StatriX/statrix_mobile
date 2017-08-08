@@ -1,5 +1,6 @@
 package com.example.statrix;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -45,12 +46,12 @@ public class RegistrationActivity extends AppCompatActivity {
                 .withActionBarDrawerToggle(true)
                 .withHeader(R.layout.drawer_header)
                 .addDrawerItems(
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_general_statistics),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_everyday_statistics),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_administration),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_products),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_general_statistics).withIdentifier(1),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_everyday_statistics).withIdentifier(2),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_administration).withIdentifier(3),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_products).withIdentifier(4),
                         new DividerDrawerItem(),
-                        new SecondaryDrawerItem().withName(R.string.drawer_item_help)
+                        new SecondaryDrawerItem().withName(R.string.drawer_item_help).withIdentifier(5)
                 )
                 /*.addDrawerItems(
                         new PrimaryDrawerItem().withName(R.string.drawer_item_general_statistics).withIcon(FontAwesome.Icon.faw_home).withIdentifier(1),
@@ -63,11 +64,31 @@ public class RegistrationActivity extends AppCompatActivity {
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id, IDrawerItem drawerItem) {
-                        switch (view.getId()){
-                            case
+                        switch (drawerItem.getIdentifier()){
+                            case 1:
+                                Intent intent = new Intent(view.getContext(), GeneralStatistics.class);
+                                startActivity(intent);
+                                break;
+                            /*case 2:
+                                Intent intent1 = new Intent(view.getContext(), EveryDayStatistics.class);
+                                startActivity(intent1);
+                                break;
+                            case 3:
+                                Intent intent2 = new Intent(view.getContext(), Admin.class);
+                                startActivity(intent2);
+                                break;
+                            case 4:
+                                Intent intent3 = new Intent(view.getContext(), BuyProduct.class);
+                                startActivity(intent3);
+                                break;
+                            case 5:
+                                Intent intent4 = new Intent(view.getContext(), FeedBack.class);
+                                startActivity(intent4);
+                                break;*/
                         }
                     }
-                })
+                });
+
     }
 }
 

@@ -20,10 +20,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegistrationActivity"
+        <activity
+            android:name=".RegistrationActivity"
             android:label="@string/toolbar_registration"
-            android:theme="@style/AppTheme">
-        </activity>
+            android:theme="@style/AppTheme"></activity>
+        <activity android:name=".GeneralStatistics"
+            android:label="@string/toolbar_general_statistics"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
