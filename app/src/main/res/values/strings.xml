@@ -13,5 +13,11 @@
     <string name="toolbar_admin">Администрирование</string>
     <string name="toolbar_buy_product">Продукты</string>
     <string name="toolbar_feedback">Обратная связь</string>
+    <string name="reg_frgmnt_enter_name">Введите имя</string>
+    <string name="reg_frgmnt_enter_email">Введите e-mail</string>
+    <string name="reg_frgmnt_enter_pw">Введите пароль</string>
+    <string name="reg_frgmnt_repeat_pw">Введите пароль повторно</string>
+    <string name="reg_frgmnt_reg_confirm">Регистрация</string>
+    <string name="reg_frgmnt_toolbar_title">Регистрация</string>
 
 </resources>

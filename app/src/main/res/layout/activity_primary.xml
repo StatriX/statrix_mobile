@@ -4,9 +4,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <fragment
-        class="com.example.statrix.LoginFragment"
-        android:id="@+id/login_fragment"
+    <FrameLayout
+        android:id="@+id/primary_fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

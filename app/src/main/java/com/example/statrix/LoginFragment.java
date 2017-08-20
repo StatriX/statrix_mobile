@@ -1,6 +1,5 @@
 package com.example.statrix;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -21,37 +20,44 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     private ImageView logo;
     private TextView forgetPassword;
     private TextView registration;
+    private PrimaryCallbackInterface primaryCallbackInterface;
+    private final String TAG_REGISTRATION = "REGISTRATION";
+    private final String TAG_FORGET_PASSWORD = "FORGET_PASSWORD";;
+    private final String TAG_ENTRY = "ENTRY";
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
-        return inflater.inflate(R.layout.fragment_login, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_login,container,false);
+        email = rootView.findViewById(R.id.email);
+        password = rootView.findViewById(R.id.password);
+        enter = rootView.findViewById(R.id.enter);
+        logo = rootView.findViewById(R.id.logo);
+        forgetPassword = rootView.findViewById(R.id.forget_password);
+        registration = rootView.findViewById(R.id.registration);
+        registration.setOnClickListener(this);
+        forgetPassword.setOnClickListener(this);
+        enter.setOnClickListener(this);
+        return rootView;
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
-        View view = getView();
-        if (view!=null){
-            email = getActivity().findViewById(R.id.email);
-            password = getActivity().findViewById(R.id.password);
-            enter = getActivity().findViewById(R.id.enter);
-            logo = getActivity().findViewById(R.id.logo);
-            forgetPassword = getActivity().findViewById(R.id.forget_password);
-            registration = getActivity().findViewById(R.id.registration);
-            registration.setOnClickListener(this);
-        }
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        primaryCallbackInterface = (PrimaryCallbackInterface)getActivity();
     }
-
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.registration:
-                Intent intent = new Intent(getContext(), RegistrationActivity.class);
-                startActivity(intent);
+                primaryCallbackInterface.chooser(TAG_REGISTRATION);
                 break;
+            case R.id.forget_password:
+                primaryCallbackInterface.chooser(TAG_FORGET_PASSWORD);
+                break;
+            case R.id.enter:
+                primaryCallbackInterface.chooser(TAG_ENTRY);
             default:
                 break;
         }
