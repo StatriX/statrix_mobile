@@ -21,19 +21,17 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     private TextView forgetPassword;
     private TextView registration;
     private PrimaryCallbackInterface primaryCallbackInterface;
-    private final String TAG_REGISTRATION = "REGISTRATION";
-    private final String TAG_FORGET_PASSWORD = "FORGET_PASSWORD";;
-    private final String TAG_ENTRY = "ENTRY";
+
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_login,container,false);
-        email = rootView.findViewById(R.id.email);
-        password = rootView.findViewById(R.id.password);
-        enter = rootView.findViewById(R.id.enter);
+        View rootView = inflater.inflate(R.layout.fragment_login, container, false);
+        email = rootView.findViewById(R.id.frgmnt_reg_email);
+        password = rootView.findViewById(R.id.frgmnt_reg_password);
+        enter = rootView.findViewById(R.id.frgmnt_reg_enter);
         logo = rootView.findViewById(R.id.logo);
-        forgetPassword = rootView.findViewById(R.id.forget_password);
+        forgetPassword = rootView.findViewById(R.id.frgmnt_reg_forget_password);
         registration = rootView.findViewById(R.id.registration);
         registration.setOnClickListener(this);
         forgetPassword.setOnClickListener(this);
@@ -44,20 +42,23 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        primaryCallbackInterface = (PrimaryCallbackInterface)getActivity();
+        primaryCallbackInterface = (PrimaryCallbackInterface) getActivity();
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.registration:
-                primaryCallbackInterface.chooser(TAG_REGISTRATION);
+
+                primaryCallbackInterface.registration();
                 break;
-            case R.id.forget_password:
-                primaryCallbackInterface.chooser(TAG_FORGET_PASSWORD);
+            case R.id.frgmnt_reg_forget_password:
+                primaryCallbackInterface.forgetpassword();
                 break;
-            case R.id.enter:
-                primaryCallbackInterface.chooser(TAG_ENTRY);
+            case R.id.frgmnt_reg_enter:
+                String lg = email.getText().toString();
+                String pw = password.getText().toString();
+                primaryCallbackInterface.entry(lg,pw);
             default:
                 break;
         }

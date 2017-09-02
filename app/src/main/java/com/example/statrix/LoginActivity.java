@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -30,11 +28,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
 
     private void initView() {
-        email = (EditText) findViewById(R.id.email);
-        password = (EditText) findViewById(R.id.password);
-        enter = (Button) findViewById(R.id.enter);
+        email = (EditText) findViewById(R.id.frgmnt_reg_email);
+        password = (EditText) findViewById(R.id.frgmnt_reg_password);
+        enter = (Button) findViewById(R.id.frgmnt_reg_enter);
         logo = (ImageView) findViewById(R.id.logo);
-        forgetPassword = (TextView) findViewById(R.id.forget_password);
+        forgetPassword = (TextView) findViewById(R.id.frgmnt_reg_forget_password);
         registration = (TextView) findViewById(R.id.registration);
     }
 
