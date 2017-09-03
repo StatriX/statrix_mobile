@@ -21,10 +21,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".RegistrationActivity"
-            android:label="@string/toolbar_registration"
-            android:theme="@style/AppTheme"/>
-        <activity
             android:name=".GeneralStatistics"
             android:label="@string/toolbar_general_statistics"
             android:theme="@style/AppTheme"/>

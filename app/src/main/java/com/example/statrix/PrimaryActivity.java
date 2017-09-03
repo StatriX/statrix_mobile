@@ -2,13 +2,21 @@ package com.example.statrix;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 public class PrimaryActivity extends AppCompatActivity implements PrimaryCallbackInterface {
+
+    private DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +24,8 @@ public class PrimaryActivity extends AppCompatActivity implements PrimaryCallbac
         setContentView(R.layout.activity_primary);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
         if (savedInstanceState == null) {
             LoginFragment loginFragment = new LoginFragment();
             fragmentLoader(loginFragment);
@@ -44,7 +54,30 @@ public class PrimaryActivity extends AppCompatActivity implements PrimaryCallbac
 
     @Override
     public void entry(@NonNull String login, @NonNull String password) {
+        GeneralStatisticsFragment generalStatisticsFragment = new GeneralStatisticsFragment();
+        fragmentLoader(generalStatisticsFragment);
+        setupDrawer();
+        drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
+    }
 
+    private void setupDrawer() {
+        NavigationView navView = (NavigationView) findViewById(R.id.navigation_view);
+        navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                item.setChecked(true);
+                switch (item.getItemId()){
+                    case R.id.firstMenu:
+                        Toast.makeText(PrimaryActivity.this, "firstMenuClicked", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.secondMenu:
+                        Toast.makeText(PrimaryActivity.this, "secondMenuClicked", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+//                drawerLayout.closeDrawer(GravityCompat.START);
+                return true;
+            }
+        });
     }
 }
 

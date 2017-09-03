@@ -49,7 +49,6 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.registration:
-
                 primaryCallbackInterface.registration();
                 break;
             case R.id.frgmnt_reg_forget_password:

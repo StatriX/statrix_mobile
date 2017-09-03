@@ -6,8 +6,6 @@
               android:layout_gravity="center"
               android:orientation="vertical">
 
-    <include layout="@layout/toolbar"/>
-
 
     <EditText
         android:id="@+id/Name"
