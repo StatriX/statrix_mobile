@@ -20,26 +20,6 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity
-            android:name=".GeneralStatistics"
-            android:label="@string/toolbar_general_statistics"
-            android:theme="@style/AppTheme"/>
-        <activity
-            android:name=".EveryDayStatistics"
-            android:label="@string/toolbar_everyday_statistics"
-            android:theme="@style/AppTheme"/>
-        <activity
-            android:name=".Admin"
-            android:label="@string/toolbar_admin"
-            android:theme="@style/AppTheme"/>
-        <activity
-            android:name=".BuyProduct"
-            android:label="@string/toolbar_buy_product"
-            android:theme="@style/AppTheme"/>
-        <activity
-            android:name=".FeedBack"
-            android:label="@string/toolbar_feedback"
-            android:theme="@style/AppTheme"/>
     </application>
 
 </manifest>

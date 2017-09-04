@@ -68,13 +68,15 @@ public class PrimaryActivity extends AppCompatActivity implements PrimaryCallbac
                 item.setChecked(true);
                 switch (item.getItemId()){
                     case R.id.firstMenu:
-                        Toast.makeText(PrimaryActivity.this, "firstMenuClicked", Toast.LENGTH_SHORT).show();
+                        GeneralStatisticsFragment generalStatisticsFragment = new GeneralStatisticsFragment();
+                        fragmentLoader(generalStatisticsFragment);
                         break;
                     case R.id.secondMenu:
-                        Toast.makeText(PrimaryActivity.this, "secondMenuClicked", Toast.LENGTH_SHORT).show();
+                        DailyStatisticsFragment dailyStatisticsFragment = new DailyStatisticsFragment();
+                        fragmentLoader(dailyStatisticsFragment);
                         break;
                 }
-//                drawerLayout.closeDrawer(GravityCompat.START);
+                drawerLayout.closeDrawer(GravityCompat.START);
                 return true;
             }
         });
